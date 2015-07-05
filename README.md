@@ -36,7 +36,7 @@ Usefull Commands :
 
 Installation :
 =======================================
-- git clone https://github.com/rrishee/dms.git
+- git clone https://github.com/singhmohancs/eAngular.git
 - npm install gulp -g if not installed before
 - bower install
 - npm install
