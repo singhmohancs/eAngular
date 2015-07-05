@@ -1,0 +1,44 @@
+<!-- Container -->
+<div class="signin-container">
+    <!-- Left side -->
+    <div class="signin-info">
+        <div class="logo"><img src="img/eAngular-big.png" alt="smart DMS" style="margin-top: -5px;width:100%"></div>
+    </div>
+    <!-- / Left side -->
+    <!-- Right side -->
+    <div class="signin-form">
+        <!-- Form -->
+        <form ng-submit="login()" id="signin-form_id" name='loginForm'>
+            <div class="signin-text">
+                <span translate="login.labels.heading">Sign In to your account</span>
+            </div>
+            <!-- / .signin-text -->
+            <div class="alert alert-danger" ng-show="authenticationError" translate="login.messages.error.authentication">
+                <strong>Authentication failed!</strong> Please check your credentials and try again.
+            </div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : loginForm.signin_username.$invalid && !loginForm.signin_username.$pristine }">
+                <input type="text" name="signin_username" id="username_id" ng-model="username" class="form-control input-lg" placeholder="Username or email" required>
+                <span class="fa fa-envelope signin-form-icon"></span>
+                <p ng-show="loginForm.signin_username.$invalid && !loginForm.signin_username.$pristine" class="help-block" translate="login.messages.validate.username.required"></p>
+            </div>
+            <!-- / Username -->
+            <div class="form-group w-icon" ng-class="{ 'has-error' : loginForm.signin_password.$invalid && !loginForm.signin_password.$pristine }">
+                <input type="password" name="signin_password" id="password_id" class="form-control input-lg" ng-model="password" placeholder="Password" required>
+                <span class="fa fa-lock signin-form-icon"></span>
+                <p ng-show="loginForm.signin_password.$invalid && !loginForm.signin_password.$pristine" class="help-block" translate="login.messages.validate.password.required"></p>
+            </div>
+            <!-- / Password -->
+            <div class="form-actions">
+                <input type="submit" value="SIGN IN" data-ng-class="{'signin-btn' : loginForm.$valid , 'inactive-signin-btn' : loginForm.$invalid }"  class=" bg-primary" ng-disabled="loginForm.$invalid">
+                <a ui-sref="account.forgotpassword" ng-href="#" class="forgot-password pull-right" id="forgot-password-link" translate="login.labels.forgotpassword">Forgot your password?</a>
+            </div>
+            <!-- / .form-actions -->
+        </form>
+        <!-- / Form -->
+        <div class="not-a-member">
+           <span translate="global.label.notamember"> Not a member? </span> <a ui-sref="account.register" translate="global.label.signup">Sign up now</a>
+        </div>
+    </div>
+    <!-- Right side -->
+</div>
+<!-- / Container -->

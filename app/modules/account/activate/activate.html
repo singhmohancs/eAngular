@@ -1,0 +1,39 @@
+
+
+<!-- Container -->
+<div class="signin-container">
+    <!-- Left side -->
+    <div class="signin-info">
+        <div class="logo"><img src="img/eAngular-big.png" alt="smart DMS" style="margin-top: -5px;width:100%"></div>
+    </div>
+    <!-- / Left side -->
+    <!-- Right side -->
+    <div class="signin-form">
+
+    <div class="row">
+
+            <div class="signin-text">
+                <span translate="activate.title"></span>
+            </div>
+
+            <div class="alert alert-success" ng-show="success" translate="activate.messages.success">
+                <strong>Your username has been validated.</strong> Please authenticate.
+            </div>
+
+            <div class="alert alert-danger" ng-show="error" translate="activate.messages.error">
+                <strong>Your username could not be validated.</strong> Please use the registration form to register your username.
+            </div>
+
+    </div>
+        <!-- / Form -->
+        <div class="not-a-member"  ng-show="error" >
+          <a ui-sref="account.register" translate="global.label.signup">Sign up now</a>
+        </div>
+        <div class="have-account" ng-show="success" >
+            <span><a ui-sref="account.login" translate="global.label.signin">Sign In</a></span>
+        </div>
+    </div>
+    <!-- Right side -->
+</div>
+<!-- / Container -->
+

@@ -1,0 +1,37 @@
+<header class="main-header" data-ng-controller="HeaderController">
+    <!-- Logo -->
+    <a ng-href="#" ui-sref="home" class="logo" title="Smart DMS">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>E</b>VNOUR</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg" >Evnour</span>
+    </a>
+    <nav class="navbar navbar-static-top" ng-switch="isAuthenticated()">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-custom-menu" ng-switch-when="true">
+                <ul class="nav navbar-nav pull-left left-navbar">
+                    <li>
+                        <a ng-href="#" ui-sref="home">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" prevent-default>Link1</a>
+                    </li>
+                    <li class="visible-xs-block"> <a ng-href="#" toggle-search-form><i class="fa fa-search fa-fw"></i></a></li>
+                </ul>
+                <form class="navbar-form navbar-left nav-search-form col-md-2" role="search" ng-submit="">
+                    <div class="form-group">
+                        <input type="text" data-ng-model="searchForm.searchJobText" class="form-control" id="navbar-search-input" placeholder="Search your admin" />
+                    </div>
+                </form>
+            <header-notification data-action="logout"></header-notification>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+</header>

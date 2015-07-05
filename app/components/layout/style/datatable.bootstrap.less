@@ -1,0 +1,43 @@
+.dataTables_wrapper {
+    .dataTables_paginate {
+        .paginate_button:hover {
+            background: none !important;
+            background-color: none !important;
+            border: 0 none;
+        }
+        .paginate_button {
+            padding: 0;
+            margin-left: 0;
+            border: 0 none !important;
+        }
+        .pagination {
+            margin: 15px 0 15px;
+        }
+    }
+    .dataTables_info {
+        padding-top: 1.755em;
+    }
+    table {
+        &.dataTable {
+            &.no-footer {
+                border-bottom: 0 none;
+            }
+        }
+    }
+}
+
+.table-responsive {
+    >.dataTables_wrapper {
+        .row {
+            margin: 0 !important;
+            div:first-child {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            div:last-child {
+                margin-right: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

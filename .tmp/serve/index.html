@@ -1,0 +1,196 @@
+<!doctype html>
+<html ng-app="eAngular">
+  <head>
+  <base href="/">
+    <meta charset="utf-8">
+    <title>eAngular - Evnour angular boilerplate project</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,app}) styles/vendor.css -->
+    <link rel="stylesheet" href="modules/vendor.css">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="../bower_components/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="../bower_components/datatables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="../bower_components/select2/select2.css" />
+    <link rel="stylesheet" href="../bower_components/angular-ui-select/dist/select.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,app}) styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="modules/index.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+  <body class="skin-green {{pageClass}} sidebar-mini">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ui-view ng-cloak="" class="fade-in-up"></div>
+
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+    <!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/angular-translate/angular-translate.js"></script>
+    <script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="../bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-storage/dist/angular-storage.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="../bower_components/Chart.js/Chart.js"></script>
+    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="../bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="../bower_components/raphael/raphael.js"></script>
+    <script src="../bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/angular-moment/angular-moment.js"></script>
+    <script src="../bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="../bower_components/angular-slimscroll/angular-slimscroll.js"></script>
+    <script src="../bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+    <script src="../bower_components/ng-idle/angular-idle.js"></script>
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="../bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+    <script src="../bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="../bower_components/angular-ui-date/src/date.js"></script>
+    <script src="../bower_components/select2/select2.js"></script>
+    <script src="../bower_components/angular-ui-select2/src/select2.js"></script>
+    <script src="../bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="../bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials,app}) scripts/app.js -->
+    <!-- inject:js -->
+    <script src="components/layout/index.js"></script>
+    <script src="components/layout/header/header-notification/user-notification/user-notification.directive.js"></script>
+    <script src="components/layout/header/header-notification/task-progress-notification/task-progress-notification.directive.js"></script>
+    <script src="components/layout/header/header-notification/task-assignment-notification/task-assignment-notification.directive.js"></script>
+    <script src="components/layout/sidebar/sidebar-search/sidebar-search.js"></script>
+    <script src="components/layout/header/header-notification/header-notification.directive.js"></script>
+    <script src="components/layout/header/header-notification/header-notification.controller.js"></script>
+    <script src="components/layout/sidebar/sidebar.js"></script>
+    <script src="components/layout/sidebar/sidebar-tree.js"></script>
+    <script src="components/layout/js/dataTables.bootstrap.js"></script>
+    <script src="components/layout/js/app.js"></script>
+    <script src="components/layout/idle-modal/idel-modal.controller.js"></script>
+    <script src="components/layout/header/toggle-form-directive.js"></script>
+    <script src="components/layout/header/header.controller.js"></script>
+    <script src="modules/index.js"></script>
+    <script src="components/auth/services/sessions.service.js"></script>
+    <script src="components/auth/services/reset-password.service.js"></script>
+    <script src="components/auth/services/register.service.js"></script>
+    <script src="components/auth/services/password.service.js"></script>
+    <script src="components/auth/services/forgot-password.service.js"></script>
+    <script src="components/auth/services/activate.service.js"></script>
+    <script src="components/auth/services/account.service.js"></script>
+    <script src="components/auth/provider/auth.session.service.js"></script>
+    <script src="modules/pages/index.js"></script>
+    <script src="modules/pages/privacy-policy/privacy-policy.js"></script>
+    <script src="modules/pages/privacy-policy/privacy-policy.controller.js"></script>
+    <script src="modules/pages/help/help.js"></script>
+    <script src="modules/pages/help/help.controller.js"></script>
+    <script src="modules/pages/contact-support/contact-support.js"></script>
+    <script src="modules/pages/contact-support/contact-support.controller.js"></script>
+    <script src="modules/account/index.js"></script>
+    <script src="modules/account/settings/settings.js"></script>
+    <script src="modules/account/settings/settings.controller.js"></script>
+    <script src="modules/account/reset-password/reset-password.js"></script>
+    <script src="modules/account/reset-password/reset-password.controller.js"></script>
+    <script src="modules/account/register/register.js"></script>
+    <script src="modules/account/register/register.controller.js"></script>
+    <script src="modules/account/password/password.js"></script>
+    <script src="modules/account/password/password.directive.js"></script>
+    <script src="modules/account/password/password.controller.js"></script>
+    <script src="modules/account/logout/logout.js"></script>
+    <script src="modules/account/logout/logout.controller.js"></script>
+    <script src="modules/account/login/login.js"></script>
+    <script src="modules/account/login/login.controller.js"></script>
+    <script src="modules/account/forgot-password/forgot-password.js"></script>
+    <script src="modules/account/forgot-password/forgot-password.controller.js"></script>
+    <script src="modules/account/activate/activate.js"></script>
+    <script src="modules/account/activate/activate.controller.js"></script>
+    <script src="widgets/index.js"></script>
+    <script src="widgets/timeline/timeline.js"></script>
+    <script src="widgets/notifications/notifications.js"></script>
+    <script src="widgets/chat/chat.js"></script>
+    <script src="components/util/util.factory.js"></script>
+    <script src="components/util/truncate.filter.js"></script>
+    <script src="components/util/stopClickPropogation.js"></script>
+    <script src="components/util/scroll-top.js"></script>
+    <script src="components/util/parse-links.service.js"></script>
+    <script src="components/util/file-model.js"></script>
+    <script src="components/util/base64.service.js"></script>
+    <script src="components/user/user.service.js"></script>
+    <script src="components/slider/slider.js"></script>
+    <script src="components/notify/index.js"></script>
+    <script src="components/logger/logger.js"></script>
+    <script src="components/layout/layout.service.js"></script>
+    <script src="components/layout/layout.controller.js"></script>
+    <script src="components/language/language.service.js"></script>
+    <script src="components/language/language.controller.js"></script>
+    <script src="components/form/form.directive.js"></script>
+    <script src="components/auth/principal.service.js"></script>
+    <script src="components/auth/auth.service.js"></script>
+    <script src="modules/pages/pages.states.js"></script>
+    <script src="modules/notification/index.js"></script>
+    <script src="modules/notification/notification.resource.js"></script>
+    <script src="modules/notification/notification.model.js"></script>
+    <script src="modules/main/main.js"></script>
+    <script src="modules/main/main.controller.js"></script>
+    <script src="modules/main/index.js"></script>
+    <script src="modules/error/error.js"></script>
+    <script src="modules/error/error.controller.js"></script>
+    <script src="modules/dashboard/index.js"></script>
+    <script src="modules/dashboard/dashboard.resource.js"></script>
+    <script src="modules/dashboard/dashboard.model.js"></script>
+    <script src="modules/core/index.js"></script>
+    <script src="modules/core/core.state.js"></script>
+    <script src="modules/core/core.request.interceptor.js"></script>
+    <script src="modules/core/core.notify.config.js"></script>
+    <script src="modules/core/core.directive.js"></script>
+    <script src="modules/core/core.constant.js"></script>
+    <script src="modules/core/core.config.js"></script>
+    <script src="modules/account/account.states.js"></script>
+    <script src="modules/account/account-directive.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>

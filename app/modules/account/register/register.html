@@ -1,0 +1,116 @@
+<!-- Container -->
+<div class="signup-container">
+    <!-- Header -->
+    <div class="signup-header">
+        <a href="index.html" class="logo">
+            <img src="img/eAngular-big.png" alt="" style="margin-top: -5px;width:100%">&nbsp;
+        </a>
+    </div>
+    <!-- / Header -->
+    <!-- Form -->
+    <div class="signup-form"  ng-hide="success">
+
+        <form ng-submit="register()" id="signup-form_id" name="signupForm" >
+            <div class="signup-text">
+                <span translate="register.subtitle"></span>
+            </div>
+            <div class="alert alert-danger" ng-show="error" translate="register.messages.error.fail"></div>
+            <div class="alert alert-danger" ng-show="errorUserExists" translate="register.messages.error.userexists"></div>
+            <div class="alert alert-danger" ng-show="errorEmailExists" translate="register.messages.error.emailexists"></div>
+             <div class="alert alert-danger" ng-show="errorCompanyNameExists" translate="register.messages.error.companynameExist"></div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : signupForm.signup_clientname.$invalid && !signupForm.signup_clientname.$pristine }">
+                <input type="text" name="signup_clientname" id="signup_clientname" ng-model="registerAccount.clientName" class="form-control input-lg" placeholder="{{'register.placeholder.companyname' | translate}}*" ng-maxlength=45 required>
+                <span class="fa fa-info signup-form-icon"></span>
+                <div ng-show="signupForm.signup_clientname.$dirty && signupForm.signup_clientname.$invalid">
+                    <p ng-show="signupForm.signup_clientname.$error.required" class="help-block" translate="register.messages.validate.companyname.required"></p>
+                    <p ng-show="signupForm.signup_clientname.$error.maxlength" class="help-block" translate="register.messages.validate.companyname.maximum"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{'has-error' : signupForm.signup_address.$invalid && !signupForm.signup_address.$pristine }">
+                <input type="text" name="signup_address" id="signup_address" ng-model="registerAccount.clientAddress" class="form-control input-lg" placeholder="{{'register.placeholder.companyaddress' | translate}}*" ng-maxlength=400 required/>
+                <span class="fa fa-map-marker signup-form-icon"></span>
+                <div ng-show="signupForm.signup_address.$dirty && signupForm.signup_address.$invalid">
+                    <p ng-show="signupForm.signup_address.$error.required" class="help-block" translate="register.messages.validate.companyaddress.required"></p>
+                    <p ng-show="signupForm.signup_address.$error.maxlength" class="help-block" translate="register.messages.validate.companyaddress.maximum"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{'has-error' : signupForm.signup_phone.$invalid && !signupForm.signup_phone.$pristine }">
+                <input type="text" name="signup_phone" id="signup_phone" ng-model="registerAccount.clientPhone" class="form-control input-lg" placeholder="{{'register.placeholder.companyphone' | translate}}*" ng-pattern="/^(\+){0,1}\d{10,12}$/" ng-maxlength=40 required>
+                <span class="fa fa-phone signup-form-icon"></span>
+                <div ng-show="signupForm.signup_phone.$dirty && signupForm.signup_phone.$invalid">
+                    <p ng-show="signupForm.signup_phone.$error.required" class="help-block" translate="register.messages.validate.companyphone.required"></p>
+                    <p ng-show="signupForm.signup_phone.$error.maxlength" class="help-block" translate="register.messages.validate.companyphone.maximum"></p>
+                     <p ng-show="signupForm.signup_phone.$error.pattern" class="help-block" translate="register.messages.validate.companyphone.pattern"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : signupForm.signup_fname.$invalid && !signupForm.signup_fname.$pristine }">
+                <input type="text" name="signup_fname" id="signup_fname" ng-model="registerAccount.contactFirstName" class="form-control input-lg" placeholder="{{'register.placeholder.firstname' | translate}}*" ng-maxlength=45 required>
+                <span class="fa fa-info signup-form-icon"></span>
+                <div ng-show="signupForm.signup_fname.$dirty && signupForm.signup_fname.$invalid">
+                    <p ng-show="signupForm.signup_fname.$error.required" class="help-block" translate="register.messages.validate.firstname.required"></p>
+                    <p ng-show="signupForm.signup_fname.$error.maxlength" class="help-block" translate="register.messages.validate.firstname.maximum"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : signupForm.signup_lname.$invalid && !signupForm.signup_lname.$pristine }">
+                <input type="text" name="signup_lname" id="signup_lname" ng-model="registerAccount.contactLastName" class="form-control input-lg" placeholder="{{'register.placeholder.lastname' | translate}}*" ng-maxlength=45 required>
+                <span class="fa fa-info signup-form-icon"></span>
+                <div ng-show="signupForm.signup_lname.$dirty && signupForm.signup_lname.$invalid">
+                    <p ng-show="signupForm.signup_lname.$error.required" class="help-block" translate="register.messages.validate.lastname.required"></p>
+                    <p ng-show="signupForm.signup_lname.$error.maxlength" class="help-block" translate="register.messages.validate.lastname.maximum"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{'has-error' : signupForm.signup_email.$invalid && !signupForm.signup_email.$pristine }">
+                <input type="email" name="signup_email" id="email_id" ng-model="registerAccount.contactEmailAddress" class="form-control input-lg" placeholder="{{'register.placeholder.useremail' | translate}}*" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" required>
+                <span class="fa fa-envelope signup-form-icon"></span>
+                <div ng-show="signupForm.signup_email.$dirty && signupForm.signup_email.$invalid">
+                <p ng-show="signupForm.signup_email.$error.required" class="help-block" translate="register.messages.validate.useremail.required"></p>
+                <p ng-show="signupForm.signup_email.$error.pattern" class="help-block" translate="register.messages.validate.useremail.email"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{'has-error' : signupForm.signup_username.$invalid && !signupForm.signup_username.$pristine }">
+                <input type="text" name="signup_username" id="signup_username" ng-model="registerAccount.login" class="form-control input-lg" placeholder="{{'register.placeholder.username' | translate}}*" ng-pattern="/^[a-z0-9]*$/" ng-maxlength=50 required>
+                <span class="fa fa-user signup-form-icon"></span>
+                <div ng-show="signupForm.signup_username.$dirty && signupForm.signup_username.$invalid">
+                    <p ng-show="signupForm.signup_username.$error.required" class="help-block" translate="register.messages.validate.username.required"></p>
+                    <p ng-show="signupForm.signup_username.$error.maxlength" class="help-block" translate="register.messages.validate.username.maximum"></p>
+                    <p ng-show="signupForm.signup_username.$error.pattern" class="help-block" translate="register.messages.validate.username.pattern"></p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : signupForm.signup_password.$invalid && !signupForm.signup_password.$pristine }">
+                <input type="password" name="signup_password" id="password_id" ng-model="registerAccount.password" class="form-control input-lg" placeholder="{{'register.placeholder.password' | translate}}*" ng-minlength=5 required>
+                <span class="fa fa-lock signup-form-icon"></span>
+                <div ng-show="signupForm.signup_password.$invalid && !signupForm.signup_password.$pristine">
+                    <p ng-show="signupForm.signup_password.$error.required" class="help-block" translate="register.messages.validate.password.required"></p>
+                    <p class="help-block" ng-show="signupForm.signup_password.$error.minlength" translate="register.messages.validate.password.minlength">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group w-icon" ng-class="{ 'has-error' : signupForm.confirm_password.$invalid && !signupForm.confirm_password.$pristine }">
+                <input type="password" name="confirm_password" id="confirm_password" ng-model="registerAccount.confirmPassword" class="form-control input-lg" placeholder="{{'register.placeholder.confirmpassword' | translate}}*" pw-check="password_id" required>
+                <span class="fa fa-lock signup-form-icon"></span>
+                <div ng-show="signupForm.confirm_password.$invalid && !signupForm.confirm_password.$pristine">
+                    <p class="help-block" translate="register.messages.validate.confirmpassword.required" ng-show="signupForm.confirm_password.$error.required"></p>
+                    <p class="help-block" translate="register.messages.validate.confirmpassword.matched" ng-show="signupForm.confirm_password.$error.pwmatch"></p>
+                </div>
+            </div>
+            <div class="form-group" style="margin-top: 20px;margin-bottom: 20px;" ng-class="{'has-error' : signupForm.signup_confirm.$invalid && !signupForm.signup_confirm.$pristine }">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="signup_confirm" class="px" id="signup_confirm" ng-model="confirm" required>
+                    <span class="lbl"><span translate="register.label.agree"> I agree with the</span> <a href="#" target="_blank" translate="register.label.terms">Terms</a></span>
+                    <p ng-show="signupForm.signup_confirm.$invalid && !signupForm.signup_confirm.$pristine" class="help-block" translate="register.messages.validate.terms.required"></p>
+                </label>
+                <input type="submit" value="SIGN UP" data-ng-class="{'signup-btn' : signupForm.$valid , 'inactive-signup-btn' : signupForm.$invalid }"  class="bg-primary pull-right" ng-disabled="signupForm.$invalid || loadingSpinner">
+           </div>
+
+        </form>
+        <!-- / Form -->
+        <div class="have-account" ng-hide="success">
+            <span><span translate="register.label.haveaccount">Already have an account?</span> <a ui-sref="account.login" translate="global.label.signin">Sign In</a></span>
+        </div>
+    </div>
+    <div class="signup-form signup-success" ng-show="success">
+        <div ng-show="success" translate="register.messages.success"></div>
+        <a ng-show="!success" ui-sref="account.login" translate="register.signin"></a>
+    </div>
+    <!-- Right side -->
+</div>

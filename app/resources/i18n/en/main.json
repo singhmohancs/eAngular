@@ -1,0 +1,20 @@
+{
+  "main": {
+    "title": "eAngular - Evnour Angular boilerplate project",
+    "subtitle": "This is your homepage",
+    "logged": {
+      "message": "You are logged in as user \"{{username}}\"."
+    },
+    "label":{
+      "no-matrics":"There is no metrics available."
+    },
+    "link": {
+      "homepage": "eAngular homepage",
+      "stackoverflow": "eAngular on Stack Overflow",
+      "bugtracker": "eAngular bug tracker",
+      "contact": "contact @singhmohancs@gmail.com"
+    },
+    "like": "If you like eAngular, don't forget to give us a star on",
+    "github": "Github"
+  }
+}

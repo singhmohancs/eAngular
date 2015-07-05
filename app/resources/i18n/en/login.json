@@ -1,0 +1,28 @@
+{
+    "login": {
+        "title": "eAngular - Evnour Angular boilerplate project",
+        "form": {
+            "password": "Password",
+            "password.placeholder": "Your password",
+            "rememberme": "Automatic Login",
+            "button": "Login"
+        },
+        "messages": {
+             "validate": {
+                "username": {
+                    "required": "Username is required."
+					},
+				"password": {
+                    "required": "Password is required."
+					}
+            },
+            "error": {
+                "authentication": "<strong>Authentication failed!</strong> Please check your credentials and try again."
+            }
+        },
+        "labels":{
+            "forgotpassword":"Forgot your password?",
+            "heading":"Sign In to your account"
+        }
+    }
+}

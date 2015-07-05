@@ -1,0 +1,24 @@
+{
+  "global": {
+    "title": "eAngular",
+    "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+    "navigation": {
+      "logo": {
+        "title": "eAngular",
+        "src": "eAngular-logo.jpg"
+      },
+      "create": {
+        "create": "Create",
+        "chart": "Chart",
+        "dashboard": "Dashboard"
+      },
+      "admin": {},
+      "language": "Language"
+    },
+    "label": {
+      "home": "Home"
+    }
+  },
+
+  "footer": "This is your footer"
+}

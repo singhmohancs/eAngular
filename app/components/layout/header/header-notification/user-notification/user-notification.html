@@ -1,0 +1,26 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" prevent-default>
+    <i class="fa fa-envelope-o"></i>
+    <span class="badge bg-green">{{userNotifications.length}}</span>
+</a>
+<ul class="dropdown-menu">
+    <li class="header">You have {{userNotifications.length}} messages</li>
+    <li>
+        <!-- inner menu: contains the actual data -->
+        <ul class="menu" slimscroll="{ height: '350px',alwaysVisible: false,size: '3px'}">
+            <li data-ng-repeat="(key, notification) in userNotifications" style="position:relative">
+                <!-- start message -->
+                <a ui-sref="job.detail({job_id:notification.activity.job.id})" data-ng-class="{'active': notification.isRead}">
+                    <div class="pull-left">
+                        <img data-ng-src="/api/account/photo/{{notification.user.id}}" class="img-circle" alt="User Image" />
+                    </div>
+                    <h4><span class="notification-header with-image">{{notification.user.login}}</span><small><i class="fa fa-clock-o"></i> <time am-time-ago="notification.notificationTimeStamp" title="{{ notification.notificationTimeStamp | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time></small>
+                    </h4>
+                    <p>{{notification.notificationMessage}}</p>
+                </a>
+                <a href="#" data-ng-click="dismissAlert($event,notification, 'userNotification');" style="position: absolute;right: 10px;bottom: 5px;font-size: 8px;padding: 0 0 !important;  border-bottom:0 none !important;background:none; " tooltip-placement="left" tooltip="Mark as read"><i class="fa fa-circle"></i></a>
+            </li>
+            <!-- end message -->
+        </ul>
+    </li>
+    <li class="footer" data-ng-show="isUserLoadMore()"><a href="#" data-ng-click="loadMore($event)" stop-click-propagation>Load more</a></li>
+</ul>

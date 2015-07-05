@@ -1,0 +1,28 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" prevent-default>
+    <i class="fa fa-bell-o"></i>
+    <span class="badge bg-yellow">{{taskAssignmentNotifications.length}}</span>
+</a>
+<ul class="dropdown-menu">
+    <li class="header">You have {{taskAssignmentNotifications.length}} alerts</li>
+    <li>
+        <!-- inner menu: contains the actual data -->
+        <ul class="menu">
+            <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu" slimscroll="{ height: '350px',alwaysVisible: false,size: '3px'}">
+                    <li data-ng-repeat="(key, notification) in taskAssignmentNotifications" style="position:relative">
+                        <!-- start message -->
+                        <a href="#" data-ng-class="{'active': notification.isRead}" style="padding-right: 25px;">
+                            <h4 style="margin-left:0;"><span class="notification-header">{{notification.job.name}} : {{notification.task.name}}</span><small style="font-size: 70%;right:-15px;"><i class="fa fa-clock-o"></i> <time am-time-ago="notification.alertGenerationTime" title="{{ notification.alertGenerationTime | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time></small>
+                            </h4>
+                            <p style="margin:0">{{notification.message}}</p>
+                            <small style="font-size:70%;" class="gotojobdetail" data-ng-click="goToTaskDetails($event, notification)"><span>Task Detail</span></small>
+                        </a>
+                        <a href="#" data-ng-click="dismissAlert($event, notification);" style="position: absolute;right: 10px;bottom: 5px;font-size: 8px;padding: 0 0 !important;  border-bottom:0 none !important;background:none; "  tooltip-placement="left" tooltip="Mark as read"><i class="fa fa-circle"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="footer" data-ng-show="isLoadMore()"><a href="#" data-ng-click="loadMore($event)" stop-click-propagation>Load more</a></li>
+</ul>
